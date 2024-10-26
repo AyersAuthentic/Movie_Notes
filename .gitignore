@@ -1,0 +1,39 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Audio and video files (for large media files)
+audio/
+video/
+chunks/
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest cache
+.pytest_cache/
+
+# VS Code configuration files
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Output files
+transcription.txt
+detailed_notes.txt
+
+# Ignore all .wav or .mp4 files generated in this project
+*.wav
+*.mp4
