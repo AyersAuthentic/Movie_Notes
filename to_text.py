@@ -26,7 +26,7 @@ def transcribe_audio_chunk(file_path):
                 model="whisper-1", 
                 file=audio_file
             )
-        return file_path, transcript.text
+        return transcript.text
     except Exception as e:
         print(f"Error transcribing {file_path}: {e}")
         return None
@@ -51,15 +51,21 @@ def transcribe_chunks(chunk_dir):
     
     # Use ThreadPoolExecutor to transcribe files concurrently
     with ThreadPoolExecutor(max_workers=20) as executor:  # Adjust max_workers based on your system's capacity
-        futures = {executor.submit(transcribe_audio_chunk, path): path for path in chunk_paths}
+        # Map each chunk to its index in sorted order
+        futures = {executor.submit(transcribe_audio_chunk, path): i for i, path in enumerate(chunk_paths)}
         
         for future in as_completed(futures):
             result = future.result()
-            if result:
-                _, text = result
-                transcriptions.append(text)
+            if result is not None:
+                index = futures[future]
+                transcriptions.append((index, result))
     
-    return transcriptions
+    # Sort by index to ensure order is maintained
+    transcriptions.sort(key=lambda x: x[0])
+    # Extract only the text part, ordered
+    ordered_texts = [text for _, text in transcriptions]
+    
+    return ordered_texts
 
 def save_transcriptions(transcriptions, output_dir):
     """
