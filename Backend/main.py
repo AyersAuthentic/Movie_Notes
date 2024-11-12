@@ -1,7 +1,7 @@
 import os
 from fetch_audio import download_audio  # Import from fetch_audio.py
 from chunker import split_audio  # Import from chunker.py
-from to_text import transcribe_chunks, save_transcriptions  # Import from to_text.py
+from to_text_groq import transcribe_chunks, save_transcriptions  # Import from to_text.py
 import argparse
 
 from constants import AUDIO_PATH, CHUNK_PATH, CHUNK_LENGTH_MS, TEXT_PATH

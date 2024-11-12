@@ -46,9 +46,9 @@ def generate_detailed_notes(text):
     ]
     
     response = client.chat.completions.create(
-        model="gpt-4o",  # Use the GPT-4o model with the extended token limit
+        model="gpt-4o",  
         messages=messages,
-        max_tokens=16000,  # Maximize token usage for a comprehensive output
+        max_tokens=17000, 
         ##temperature=0.4
     )
     
@@ -56,7 +56,7 @@ def generate_detailed_notes(text):
 
 
 
-# Load your full transcription
+# Loadx full transcription
 with open(f"{TEXT_PATH}/transcription.txt", "r") as f:
     transcription_text = f.read()
 
