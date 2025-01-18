@@ -1,14 +1,13 @@
-pytube>=12.1.0
-moviepy>=1.0.3
-pydub>=0.25.1
-openai-whisper>=20230314
-transformers>=4.30.0
-torch>=1.13.0
-librosa>=0.10.0
-numpy>=1.21.0
-scipy>=1.7.0
-soundfile>=0.10.0
-tqdm>=4.64.0
-requests>=2.25.0
-Flask>=2.0.0          # Optional: If you plan to build a web interface
-openai>=0.27.0        # Optional: If using OpenAI's GPT models via API
+
+
+## Note: Python Version 3.11.1 Required
+## Note: Install ffmpeg with homwbrew 
+
+
+
+pydub
+openai
+python-dotenv
+yt-dlp
+groq
+moviepy
