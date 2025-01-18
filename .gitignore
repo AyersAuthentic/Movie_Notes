@@ -38,13 +38,17 @@ chunks/
 # Log files
 *.log
 
-# Virtual environment
+# Virtual environment and large packages
 venv/
 .env/
 Backend/Notes/
 Backend/*/lib/
 env/
 *.dylib
+**/site-packages/
+**/lib/python*/
+**/torch/
+**/llvmlite/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
