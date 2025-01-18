@@ -11,12 +11,40 @@ audio/
 video/
 chunks/
 
+# Audio formats
+*.wav
+*.mp3
+*.aac
+*.m4a
+*.flac
+*.ogg
+*.wma
+*.aiff
+*.aif
+
+# Video formats
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.m4v
+*.mpeg
+*.mpg
+*.3gp
+
 # Log files
 *.log
 
 # Virtual environment
 venv/
 .env/
+Backend/Notes/
+Backend/*/lib/
+env/
+*.dylib
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
@@ -33,7 +61,3 @@ venv/
 # Output files
 transcription.txt
 detailed_notes.txt
-
-# Ignore all .wav or .mp4 files generated in this project
-*.wav
-*.mp4
